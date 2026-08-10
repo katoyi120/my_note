@@ -1,0 +1,32 @@
+# Jupyter Book 项目配置（Jupyter Book 2.x / MyST Markdown）
+# 文档参考: https://mystmd.org/guide/frontmatter
+version: 1
+
+project:
+  title: 机器学习笔记
+  description: 基于 scikit-learn 的机器学习学习笔记，使用 Jupyter Book 在线展示。
+  github: katoyi120/my_note
+  # 目录结构：首页 + 自动匹配 sciikit_learn 目录下所有 notebook
+  # 以后新增 .ipynb 文件会自动出现在网页中，无需手动修改目录
+  toc:
+    - file: index.md
+    - title: scikit-learn 笔记
+      children:
+        - pattern: MachineLearning/sciikit_learn/*.ipynb
+  # 排除不需要构建的内容（data/model 下是数据文件和模型文件，不是文档）
+  exclude:
+    - re.md
+    - MachineLearning/sciikit_learn/data/**
+    - MachineLearning/sciikit_learn/model/**
+
+site:
+  template: book-theme
+  options:
+    # 页面顶部导航
+    nav:
+      - title: 机器学习笔记
+        url: /
+      - title: GitHub 仓库
+        url: https://github.com/katoyi120/my_note
+    # 侧边栏主题
+    hide_toc: false
