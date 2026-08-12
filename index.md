@@ -22,12 +22,4 @@ GitHub Pages，无需手动操作。
 - 归一化和标准化
 - 数字识别
 
-## 本地预览
 
-```bash
-pip install jupyter-book
-jupyter-book build --html
-jupyter-book start .
-```
-
-然后在浏览器打开 <http://localhost:3000> 即可预览。
