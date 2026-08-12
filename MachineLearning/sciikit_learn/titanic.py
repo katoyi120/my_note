@@ -56,10 +56,10 @@ def random_forest():
     y = df['Survived']
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
     estimator = RandomForestClassifier()
-    estimator.fit(x, y)
-    y_pred = estimator.predict(x)
+    estimator.fit(x_train, y_train)
+    y_pred = estimator.predict(x_test)
     print('随机森林预测值:', y_pred)
-    print('随机森林准确率:', estimator.score(x, y))
+    print('随机森林准确率:', estimator.score(x_test, y_test))
     print('-' * 20)
     # 采用网格搜索调参
     params = {
